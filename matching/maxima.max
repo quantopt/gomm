@@ -1,0 +1,25 @@
+distance(d):=matrix([1,d],[0,1]);
+lens(f):= matrix([1,0],[-1/f,1]); 
+mirror(r):= matrix([1,0],[-2/r, 1]);
+refraction_flat(n1, n2):= matrix([1,0], [0,n1/n2]);
+refraction_curved(n1,n2,r):=matrix([1,0],[(n1-n2)/(r*n2), n1/n2]);
+material(d,n):= matrix([1, d/n],[0, 1]);
+
+x(d):=distance(d);
+l(f):=lens(f);
+m(r):=mirror(r);
+c(d,n):=material(d,n);
+
+
+c2c2: c(d_crys,n).x(d_opo).m(r2).x(d3).l(f2).x(d2).l(f1).x(d1).m(r1).x(d_d).c(d_crys,n);
+c2c1: c(d_crys,n).x(d_opo).m(r2).x(d2).l(f1).x(d1).m(r1).x(d_d).c(d_crys,n);
+c2w1: x(d2).l(f1).x(d1).m(r1).x(d_d).c(d_crys,n);
+c2w2: x(d3).l(f2).x(d2).l(f1).x(d1).m(r1).x(d_d).c(d_crys,n);
+w2c: c(d_crys,n).x(d_opo).m(r2).x(d);
+cmc1: c(d_crys,n).x(d_opo).l(c2).x(d2).l(f1).x(d1).l(c1).x(d_d).c(d_crys,n);
+mat: c(d_crys,n).x(d_opo).m(f2).x(d);
+mat=fullratsimp(mat);
+q2: (q1*mat[1,1]+mat[1,2])/(q1*mat[2,1]+mat[2,2]);
+fullratsimp(q2);
+load("f90")$
+f90(fullratsimp(q2));

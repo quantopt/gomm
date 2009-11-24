@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./imaging/planoconcave_neg.py
+./matching/one.py -a 30.828467 -b 25.086373 -w 426.04885 -l 1016
+./matching/one.py -a 30.828467 -f 250 -d 560.1 -w 426.04885
+

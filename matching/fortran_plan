@@ -1,0 +1,22 @@
+read paths from file
+(or accept external python input)
+opital element path can be expressed as a queue
+- should be able to traverse forwards and backwards
+- should be able to insert and delete inner elements, or end elements
+- matrix mutilplications carried out in sequence
+ 
+
+for each element in queue:
+        get info from path description (element, user specified data)
+        case element:
+               lens:  send focal
+               distance:  send distance, index of refraction
+               interface:  send n1, n2
+               mirror:  send roc
+        create new element matrix from sent data
+        add element to processing queue
+
+Calculate transfer matrix
+for each element in processing queue:
+        
+        
