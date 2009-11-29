@@ -1,0 +1,14 @@
+to compile:
+
+install g95
+http://www.g95.org/downloads.shtml
+http://ftp.g95.org/g95-x86_64.deb
+
+
+Run:
+make
+make direct
+
+edit lenses.txt to specify available lenses
+
+./lenssearch.py -a start_waist -b stop_waist -l length -t end_waist_size_tolerance
