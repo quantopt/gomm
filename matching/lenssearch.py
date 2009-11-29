@@ -21,7 +21,7 @@ def callback(f1, f2, L1avg, L2avg, L3avg, w2avg, count):
     lens1_min = 1000
     lens2_min = 1000 #absurdly high init value
 
-    print "f1: %4.0f f2: %4.0f Pos 1: %5.1f  Pos 2: %5.1f (BD: %5.1f)  L3: %5.1f  w2: %6.2f um  click: %6.2f  count: %3.0f" %  (f1, f2, L1avg, position_2, position_2-L1avg, L3avg, w2avg, L1avg+L2avg, count)
+    print "f1: %4.0f f2: %4.0f Pos 1: %5.1f  Pos 2: %5.1f (BS: %5.1f)  L3: %5.1f  w2: %6.2f um  endseg: %6.2f  click: %6.2f  count: %3.0f" % (f1, f2, L1avg, position_2, position_2-L1avg, L3avg, w2avg,position_2-L1avg+L3avg, L1avg+L2avg, count)
 
 
 
