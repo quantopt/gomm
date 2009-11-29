@@ -170,7 +170,7 @@ if __name__ == "__main__":
     oParser.add_option('-b', '--w2', type='float', help='size of waist 2 in um')
     oParser.add_option('-d', '--d1', type='float', help='distance of lens from waist 1 in mm')
     oParser.add_option('-l', '--length', type='float', help='optical path length in mm')
-    oParser.add_option('-w', '--wavelength', type='float', default='0.85209', help='beam wavelength in nm')
+    oParser.add_option('-w', '--wavelength', type='float', default='852.09', help='beam wavelength in nm')
     (options, args) = oParser.parse_args()
 
 

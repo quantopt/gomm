@@ -32,6 +32,8 @@ if __name__ == "__main__":
     oParser.add_option('-u', '--upper', type='float', default='0', help='Upper Limit - Returns solutions with L3 > upper')
     oParser.add_option('-l', '--length', type='float', help='optical path length in mm')
     oParser.add_option('-o', '--lower', type='float', default='0', help='Lower limit')
+    oParser.add_option('-t', '--tolerance', type='float', default='1',
+            help='Range for resulting waist  in microns')
     (options, args) = oParser.parse_args()
     
     w1 = options.w1
@@ -39,12 +41,12 @@ if __name__ == "__main__":
     upper_limit = options.upper
     lower_limit = options.lower
     L = options.length
+    tolerance = options.tolerance
 
 
 r = -200
 n = 1
 step = 1
-tolerance = 1
 error = 1
 
 bank = LensBank('lenses.txt')

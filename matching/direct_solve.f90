@@ -55,8 +55,8 @@ contains
           q2 = two_lens(L1, L2, L3, f1, f2, q1)
 !          q2 = three_lens(L1, L2, L3, L4, f1, f2, f3, q1)
           w2_calc = w_q(q2)
-          if (eq(aimag(q2),aimag(q_target)))  then
-                if ((abs(real(q2)) < error) .and. eq(w2,w2_calc)) then
+          if (eq(aimag(q2),aimag(q_target),tolerance))  then
+                if ((abs(real(q2)) < error) .and. eq(w2,w2_calc,tolerance)) then
                    if (L1 > lower .and. L2 > 8 .and. L3 > upper ) then
                       call solution_handler(L1, L2, L3, w2_calc)
                       ! need to make an array of raw solns o pass to python
